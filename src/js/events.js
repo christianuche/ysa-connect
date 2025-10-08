@@ -1,11 +1,19 @@
-export function loadEvents() {
-  const events = [
-    { id: 1, name: 'Beach Devotional', date: '2025-10-12', notes: 'Bring a blanket' },
-    { id: 2, name: 'Game Night', date: '2025-10-18', notes: 'Snacks welcome' },
-    { id: 3, name: 'Temple Trip', date: '2025-10-25', notes: 'Meet at 7AM' }
-  ];
+import { getEvents } from "./api.js";
 
-  const list = document.getElementById('eventList');
-  if (!list) return;
-  list.innerHTML = events.map(e => `\n    <li class="event-item">\n      <strong>${e.name}</strong> — <span class="date">${e.date}</span>\n      <p class="notes">${e.notes}</p>\n    </li>`).join('');
-}
+document.addEventListener("DOMContentLoaded", async () => {
+  const eventList = document.getElementById("event-list");
+  const events = await getEvents();
+
+  if (events.length === 0) {
+    eventList.innerHTML = "<p>No upcoming events at the moment.</p>";
+    return;
+  }
+
+  eventList.innerHTML = events.map(event => `
+    <div class="event-card">
+      <h3>${event.title}</h3>
+      <p>${event.date} — ${event.location}</p>
+      <p>${event.description}</p>
+    </div>
+  `).join("");
+});

@@ -1,5 +1,66 @@
-<section class="home">
-  <h1>Welcome to YSA Connect</h1>
-  <p>Stay connected, inspired, and involved with your local YSA community.</p>
-  <p><button id="seeEvents" onclick="location.href='events.html'">See Events</button></p>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+      name="description"
+      content="YSA Connect — Bringing Young Single Adults together through events, faith, and friendship."
+    />
+  <link rel="icon" type="image/png" href="/public/assets/logo.png" />
+  <title>Home | YSA Connect</title>
+  <link rel="stylesheet" href="../styles/main.css" />
+  <script type="module" src="../js/main.js" defer></script>
+</head>
+<body>
+  <div id="nav"></div>
+
+  <main class="home-page">
+    <!-- Hero Section -->
+    <section class="home-hero">
+      <h1>Welcome to YSA Connect</h1>
+      <p>Connecting Young Single Adults through faith, friendship, and service.</p>
+      <a href="./events.html" class="btn">Explore Events</a>
+    </section>
+
+    <!-- About / Intro Section -->
+    <section class="home-intro">
+      <h2>Discover YSA Activities Near You</h2>
+      <p>
+        Join uplifting gatherings, learn new skills, and strengthen your testimony
+        while meeting other YSAs in your area.
+      </p>
+    </section>
+
+    <!-- Features Section -->
+    <section class="home-features">
+      <div class="feature-card">
+        <img src="../../public/assets/community.png" alt="Community icon" class="feature-icon">
+        <h3>Connect</h3>
+        <p>Meet new friends who share your faith and values.</p>
+      </div>
+
+      <div class="feature-card">
+        <img src="../../public/assets/service.png" alt="Service icon" class="feature-icon">
+        <h3>Serve</h3>
+        <p>Participate in service projects that make a difference.</p>
+      </div>
+
+      <div class="feature-card">
+        <img src="../../public/assets/spiritual.png" alt="Spiritual icon" class="feature-icon">
+        <h3>Grow</h3>
+        <p>Attend events and activities that inspire spiritual growth.</p>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <h2>Ready to Get Involved?</h2>
+      <p>Find your next YSA activity and make meaningful connections today!</p>
+      <a href="./login.html" class="btn btn-secondary">Join Now</a>
+    </section>
+  </main>
+
+  <footer id="footer"></footer>
+</body>
+</html>

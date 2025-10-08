@@ -1,29 +1,13 @@
-export function loadNav(navigateTo) {
-  const nav = document.getElementById('nav');
+export function renderNav() {
+  const nav = document.getElementById("nav");
   nav.innerHTML = `
     <nav class="navbar">
-      <div class="nav-left">
-        <img src="/assets/logo.png" alt="YSA Logo" class="logo" />
-        <a href="#" id="homeLink" class="brand">YSA Connect</a>
-      </div>
+      <a href="/index.html" class="logo"><img src="/public/assets/logo.png" width="50px" height="50px"></a>
       <ul class="nav-links">
-        <li><a href="#" id="eventsLink">Events</a></li>
-        <li><a href="#" id="loginLink">Login</a></li>
+        <li><a href="/src/pages/home.html">Home</a></li>
+        <li><a href="/src/pages/events.html">Events</a></li>
+        <li><a href="/src/pages/login.html">Login</a></li>
       </ul>
     </nav>
-  `;
-
-  // attach listeners
-  nav.querySelector('#homeLink').addEventListener('click', (e) => { e.preventDefault(); navigateTo('home'); });
-  nav.querySelector('#eventsLink').addEventListener('click', (e) => { e.preventDefault(); navigateTo('events'); });
-  nav.querySelector('#loginLink').addEventListener('click', (e) => { e.preventDefault(); navigateTo('login'); });
-}
-
-export function loadFooter() {
-  const footer = document.getElementById('footer');
-  footer.innerHTML = `
-    <div class="footer-inner">
-      <p>© ${new Date().getFullYear()} YSA Connect</p>
-    </div>
   `;
 }
