@@ -45,7 +45,7 @@ export function handleLogin() {
       message.textContent = "✅ Login successful! Redirecting...";
       message.style.color = "green";
       setTimeout(() => {
-        window.location.href = "home.html";
+        window.location.href = "../home_page/index.html";
       }, 1200);
     } else {
       message.textContent = "❌ Invalid credentials. Try again.";
