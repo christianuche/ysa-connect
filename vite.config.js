@@ -1,22 +1,19 @@
-// import { defineConfig } from 'vite'
-// import react from '@vitejs/plugin-react'
-
-// // https://vite.dev/config/
-// export default defineConfig({
-//   plugins: [react()],
-// })
-
-// import { defineConfig } from "vite";
-
-// export default defineConfig({
-//   root: ".",
-//   server: {
-//     open: "/index.html",
-//   },
-// });
-
+import { resolve } from "path";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "./",
+  root: "src/",
+
+  build: {
+    outDir: "../dist",
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, "src/index.html"),
+        event: resolve(__dirname, "src/event_page/index.html"),
+        login: resolve(__dirname, "src/login_page/index.html"),
+        home: resolve(__dirname, "src/home_page/index.html"
+        ),
+      },
+    },
+  },
 });
