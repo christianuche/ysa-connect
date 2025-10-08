@@ -8,5 +8,5 @@
       </ul>
     </nav>
   `}document.addEventListener(`DOMContentLoaded`,()=>{e();let t=document.getElementById(`footer`);t.innerHTML=`
-    <p>&copy; ${new Date().getFullYear()} YSA Connect. All rights reserved.</p>
+    <p>&copy; ${new Date().getFullYear()} YSA Connect. Created by Christian Uche.</p>
   `}),document.addEventListener(`DOMContentLoaded`,()=>{let e=document.querySelectorAll(`.slide`),t=document.querySelectorAll(`.dot`),n=0;function r(n){e.forEach((e,r)=>{e.classList.toggle(`active`,r===n),t[r].classList.toggle(`active`,r===n)})}function i(){n=(n+1)%e.length,r(n)}setInterval(i,5e3),t.forEach((e,t)=>{e.addEventListener(`click`,()=>{n=t,r(n)})})});

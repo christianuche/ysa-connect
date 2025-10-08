@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const footer = document.getElementById("footer");
   footer.innerHTML = `
-    <p>&copy; ${new Date().getFullYear()} YSA Connect. All rights reserved.</p>
+    <p>&copy; ${new Date().getFullYear()} YSA Connect. Created by Christian Uche.</p>
   `;
 });
 
