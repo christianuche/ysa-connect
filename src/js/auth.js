@@ -1,57 +1,119 @@
-// const form = document.getElementById("loginForm");
-// const message = document.getElementById("login-message");
+// export function handleLogin() {
+//   const form = document.getElementById("loginForm");
+//   const message = document.getElementById("login-message");
 
-// form.addEventListener("submit", (e) => {
-//   e.preventDefault();
-//   const email = form.email.value.trim();
-//   const password = form.password.value.trim();
+//   form.addEventListener("submit", (event) => {
+//     event.preventDefault();
 
-//   // Simple validation for now
+//     const email = form.email.value.trim();
+//     const password = form.password.value.trim();
+
+//     // Simple validation for now
 //     if (!email || !password) {
 //       message.textContent = "Please fill out all fields.";
 //       message.style.color = "red";
 //       return;
 //     }
 
-//   if (email === "user@example.com" && password === "123456") {
-//     alert("Login successful!");
-//     window.location.href = "/src/pages/home.html";
-//   } else {
-//     alert("Invalid credentials. Try again.");
-//   }
-// });
+//     // Simulate login (replace with Firebase later)
+//     if (email === "test@ysa.com" && password === "password123") {
+//       message.textContent = "✅ Login successful! Redirecting...";
+//       message.style.color = "green";
+//       setTimeout(() => {
+//         window.location.href = "../home_page/index.html";
+//       }, 1200);
+//     } else {
+//       message.textContent = "❌ Invalid credentials. Try again.";
+//       message.style.color = "red";
+//     }
+//   });
+// }
+
+// document.addEventListener("DOMContentLoaded", handleLogin);
 
 // src/js/auth.js
+import { initializeApp } from "firebase/app";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
 
-export function handleLogin() {
-  const form = document.getElementById("loginForm");
-  const message = document.getElementById("login-message");
+// ✅ Your Firebase config
+const firebaseConfig = {
+  apiKey: "AIzaSyC3l0ho1ihT4c3O37f65_MiK3AJutKvRto",
+  authDomain: "ysa-connect-75d74.firebaseapp.com",
+  projectId: "ysa-connect-75d74",
+  storageBucket: "ysa-connect-75d74.firebasestorage.app",
+  messagingSenderId: "768852202005",
+  appId: "1:768852202005:web:c339564be3e5a0e2dd741c",
+  measurementId: "G-HZJEM41DGR",
+};
 
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
+// ✅ Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
-    const email = form.email.value.trim();
-    const password = form.password.value.trim();
+// ✅ Setup Google Auth Provider
+const provider = new GoogleAuthProvider();
 
-    // Simple validation for now
-    if (!email || !password) {
-      message.textContent = "Please fill out all fields.";
-      message.style.color = "red";
-      return;
-    }
+// ------------------------------------------
+// LOGIN WITH EMAIL AND PASSWORD
+// ------------------------------------------
+const loginForm = document.getElementById("loginForm");
+const messageDiv = document.getElementById("login-message");
 
-    // Simulate login (replace with Firebase later)
-    if (email === "test@ysa.com" && password === "password123") {
-      message.textContent = "✅ Login successful! Redirecting...";
-      message.style.color = "green";
+if (loginForm) {
+  loginForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const email = loginForm.email.value;
+    const password = loginForm.password.value;
+
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      messageDiv.textContent = `Welcome back, ${user.email}! 🎉`;
+      messageDiv.style.color = "green";
+
+      // Redirect after login
       setTimeout(() => {
-        window.location.href = "../home_page/index.html";
-      }, 1200);
-    } else {
-      message.textContent = "❌ Invalid credentials. Try again.";
-      message.style.color = "red";
+        window.location.href = "/home_page/index.html";
+      }, 1500);
+    } catch (error) {
+      console.error(error);
+      messageDiv.textContent = error.message;
+      messageDiv.style.color = "red";
     }
   });
 }
 
-document.addEventListener("DOMContentLoaded", handleLogin);
+// ------------------------------------------
+// GOOGLE SIGN-IN
+// ------------------------------------------
+const authContainer = document.getElementById("auth-container");
+
+if (authContainer) {
+  const googleButton = document.createElement("button");
+  googleButton.textContent = "Sign in with Google";
+  googleButton.classList.add("google-btn");
+  authContainer.appendChild(googleButton);
+
+  googleButton.addEventListener("click", async () => {
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      messageDiv.textContent = `Welcome, ${user.displayName}! 🎉`;
+      messageDiv.style.color = "green";
+
+      // Redirect after login
+      setTimeout(() => {
+        window.location.href = "/home_page/index.html";
+      }, 1500);
+    } catch (error) {
+      console.error(error);
+      messageDiv.textContent = error.message;
+      messageDiv.style.color = "red";
+    }
+  });
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Create an account on YSA Connect" />
+    <title>Register | YSA Connect</title>
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="icon" type="image/png" href="/assets/logo.png" />
+  </head>
+  <body>
+    <section class="login-section">
+      <h2>Create an Account</h2>
+      <form id="registerForm">
+        <label>Full Name:</label>
+        <input type="text" name="name" required />
+
+        <label>Email:</label>
+        <input type="email" name="email" required />
+
+        <label>Password:</label>
+        <input type="password" name="password" required />
+
+        <button type="submit">Register</button>
+      </form>
+
+      <p>Already have an account? <a href="../login_page/index.html">Login here</a></p>
+      <div id="register-message"></div>
+    </section>
+
+    <script type="module" src="../js/register.js"></script>
+  </body>
+</html>
