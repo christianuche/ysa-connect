@@ -1,7 +1,0 @@
-import"./main-DnngNq0U.js";import"./main-Dz07DJ6I.js";async function e(){return[{title:`YSA Beach Clean-Up`,date:`Oct 20, 2025`,location:`Lagos Beach`,description:`Join us for service and fun!`},{title:`Faith & Friendship Night`,date:`Oct 27, 2025`,location:`Stake Center`,description:`An evening of uplifting talks and music.`},{title:`Faith & Friendship Night`,date:`Oct 27, 2025`,location:`Stake Center`,description:`An evening of uplifting talks and music.`},{title:`Faith & Friendship Night`,date:`Oct 27, 2025`,location:`Stake Center`,description:`An evening of uplifting talks and music.`},{title:`Faith & Friendship Night`,date:`Oct 27, 2025`,location:`Stake Center`,description:`An evening of uplifting talks and music.`},{title:`Faith & Friendship Night`,date:`Oct 27, 2025`,location:`Stake Center`,description:`An evening of uplifting talks and music.`},{title:`Faith & Friendship Night`,date:`Oct 27, 2025`,location:`Stake Center`,description:`An evening of uplifting talks and music.`},{title:`Faith & Friendship Night`,date:`Oct 27, 2025`,location:`Stake Center`,description:`An evening of uplifting talks and music.`}]}document.addEventListener(`DOMContentLoaded`,async()=>{let t=document.getElementById(`event-list`),n=await e();if(n.length===0){t.innerHTML=`<p>No upcoming events at the moment.</p>`;return}t.innerHTML=n.map(e=>`
-    <div class="event-card">
-      <h3>${e.title}</h3>
-      <p>${e.date} — ${e.location}</p>
-      <p>${e.description}</p>
-    </div>
-  `).join(``)});
