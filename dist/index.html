@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -16,6 +15,8 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta property="og:image:alt" content="Ferris wheel at sunset in an amusement park" />
   <link rel="icon" href="data:image/svg+xml,svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🎡</text></svg>">
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="scripts/events.js" defer></script>
   
   <style>
     /* =========================================
@@ -406,21 +407,35 @@
     </section>
 
     <!-- Events Banner -->
-    <section class="section" id="events">
+    <section class="section" id="upcoming-events">
       <div class="container">
         <div class="banner" data-reveal>
           <div class="grid grid-2" style="align-items:center">
             <div>
-              <h2 style="margin:0 0 .4rem; font-size:var(--fs-h2)">Upcoming Events</h2>
+              <h2 style="margin:0 0 .4rem; font-size:var(--fs-h2)">🎟️ Upcoming Events</h2>
+              <div id="events-list"></div>
               <p style="margin:0; color:var(--muted)">Weekend carnivals • Birthday specials • Cultural nights. Bring your crew for unforgettable memories.</p>
-            </div>
-            <div style="display:flex; gap:.6rem; justify-content:flex-end; flex-wrap: wrap;">
-              <button class="btn">View Calendar</button>
-              <button class="btn ghost" data-open-booking>Host Your Event</button>
             </div>
           </div>
         </div>
       </div>
+    </section>
+    <section class="container">
+      <h3>Add New Event</h3>
+        <form id="eventForm" class="upcoming-event">
+          <input type="text" id="eventName" placeholder="Event Name" required />
+          <input type="date" id="eventDate" required />
+          <!-- Upload Image -->
+          <label for="eventImageUpload" class="upload-label">Upload Event Image</label>
+          <input type="file" id="eventImageUpload" accept="image/*" />
+          <div id="imagePreview" class="image-preview">No image selected</div>
+          
+          <textarea id="eventDesc" placeholder="Event Description" required></textarea>
+          <button type="submit" class="btn">Add Event</button>
+        </form>
+        <div style="display:flex; gap:.6rem; padding:10px; justify-content:flex-end; flex-wrap: wrap;">
+          <button class="btn ghost" data-open-booking>Host Your Event</button>
+        </div>
     </section>
 
     <!-- Gallery -->
@@ -525,7 +540,7 @@
 
           <div class="map" style="margin-top:var(--space)">
             <!-- Replace the q= with your exact address when ready -->
-            <iframe title="Map to Chriscodek’s World of Fun, Ohafia" src="https://www.google.com/maps?q=Ohafia%2C%20Abia%20State%2C%20Nigeria&amp;output=embed" width="100%" height="360" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe title="Map to Chriscodek’s World of Fun, Aba" src="https://www.google.com/maps?q=Ohafia%2C%20Abia%20State%2C%20Nigeria&amp;output=embed" width="100%" height="360" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
       </div>
@@ -539,7 +554,7 @@
           <div class="logo">🎡</div>
           <div>
             Chriscodek’s World of Fun
-            <small>Ohafia, Nigeria</small>
+            <small>Aba, Nigeria</small>
           </div>
         </div>
         <p style="margin:0; color:var(--muted)">Bring joy to every visit. Follow us for updates and promos.</p>
@@ -565,9 +580,9 @@
       <div>
         <h4 style="margin:.2rem 0">Contact</h4>
         <ul style="margin:0; padding:0; list-style:none; color:var(--muted)">
-          <li>Email: <a href="mailto:info@example.com">emeprosper4@.com</a></li>
-          <li>Phone: <a href="tel:+234000000000">+234 906 573 5502</a></li>
-          <li>Address: Ohafia, Abia State</li>
+          <li>Email: <a href="mailto:info@example.com">christianuche720@gmail.com</a></li>
+          <li>Phone: <a href="tel:+234000000000">+234 816 501 6088</a></li>
+          <li>Address: Aba, Abia State</li>
         </ul>
       </div>
     </div>

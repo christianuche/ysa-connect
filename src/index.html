@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -16,6 +15,8 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta property="og:image:alt" content="Ferris wheel at sunset in an amusement park" />
   <link rel="icon" href="data:image/svg+xml,svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🎡</text></svg>">
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="js/events.js" defer></script>
   
   <style>
     /* =========================================
@@ -287,7 +288,7 @@
           <div class="bg" style="
             background:
               radial-gradient(120% 110% at 70% 20%, rgba(0,0,0,.35), transparent 60%),
-              url('https://images.pexels.com/photos/19197213/pexels-photo-19197213.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600&amp;h=1066&amp;fit=crop')
+              url('https://images.pexels.com/photos/19197213/pexels-photo-19197213.jpeg?auto=compress&cs=tinysrgb&w=1600&h=1066&fit=crop')
               center/cover no-repeat;
           "></div>
         </div>
@@ -302,7 +303,7 @@
         <div class="grid grid-3" data-reveal>
           <article class="card attraction">
             <div class="media" role="img" aria-label="Rope climbing tower at a playground">
-              <div style="background-image:url('https://images.pexels.com/photos/8457816/pexels-photo-8457816.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200&amp;h=800&amp;fit=crop');"></div>
+              <div style="background-image:url('https://images.pexels.com/photos/8457816/pexels-photo-8457816.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop');"></div>
               <span class="label">Adventure Playground</span>
             </div>
             <div class="content">
@@ -311,7 +312,7 @@
           </article>
           <article class="card attraction">
             <div class="media" role="img" aria-label="Kids splashing in fountains on a sunny day">
-              <div style="background-image:url('https://images.pexels.com/photos/33059761/pexels-photo-33059761.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200&amp;h=800&amp;fit=crop');"></div>
+              <div style="background-image:url('https://images.pexels.com/photos/33059761/pexels-photo-33059761.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop');"></div>
               <span class="label">Splash Zone</span>
             </div>
             <div class="content">
@@ -320,7 +321,7 @@
           </article>
           <article class="card attraction">
             <div class="media" role="img" aria-label="Colorful mini golf putters on turf">
-              <div style="background-image:url('https://images.pexels.com/photos/6370107/pexels-photo-6370107.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200&amp;h=800&amp;fit=crop');"></div>
+              <div style="background-image:url('https://images.pexels.com/photos/6370107/pexels-photo-6370107.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop');"></div>
               <span class="label">Mini Golf</span>
             </div>
             <div class="content">
@@ -329,7 +330,7 @@
           </article>
           <article class="card attraction">
             <div class="media" role="img" aria-label="Festive swing ride at an amusement park">
-              <div style="background-image:url('https://images.pexels.com/photos/30420205/pexels-photo-30420205.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200&amp;h=800&amp;fit=crop');"></div>
+              <div style="background-image:url('https://images.pexels.com/photos/30420205/pexels-photo-30420205.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop');"></div>
               <span class="label">Sky Swing</span>
             </div>
             <div class="content">
@@ -338,7 +339,7 @@
           </article>
           <article class="card attraction">
             <div class="media" role="img" aria-label="Burger, fries and drink served on a tray">
-              <div style="background-image:url('https://images.pexels.com/photos/16962424/pexels-photo-16962424.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200&amp;h=800&amp;fit=crop');"></div>
+              <div style="background-image:url('https://images.pexels.com/photos/16962424/pexels-photo-16962424.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop');"></div>
               <span class="label">Food Court</span>
             </div>
             <div class="content">
@@ -347,7 +348,7 @@
           </article>
           <article class="card attraction">
             <div class="media" role="img" aria-label="Family picnic on the lawn">
-              <div style="background-image:url('https://images.pexels.com/photos/8208755/pexels-photo-8208755.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200&amp;h=800&amp;fit=crop');"></div>
+              <div style="background-image:url('https://images.pexels.com/photos/8208755/pexels-photo-8208755.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop');"></div>
               <span class="label">Event Lawn</span>
             </div>
             <div class="content">
@@ -406,21 +407,35 @@
     </section>
 
     <!-- Events Banner -->
-    <section class="section" id="events">
+    <section class="section" id="upcoming-events">
       <div class="container">
         <div class="banner" data-reveal>
           <div class="grid grid-2" style="align-items:center">
             <div>
-              <h2 style="margin:0 0 .4rem; font-size:var(--fs-h2)">Upcoming Events</h2>
+              <h2 style="margin:0 0 .4rem; font-size:var(--fs-h2)">🎟️ Upcoming Events</h2>
+              <div id="events-list"></div>
               <p style="margin:0; color:var(--muted)">Weekend carnivals • Birthday specials • Cultural nights. Bring your crew for unforgettable memories.</p>
-            </div>
-            <div style="display:flex; gap:.6rem; justify-content:flex-end; flex-wrap: wrap;">
-              <button class="btn">View Calendar</button>
-              <button class="btn ghost" data-open-booking>Host Your Event</button>
             </div>
           </div>
         </div>
       </div>
+    </section>
+    <section class="container">
+      <h3>Add New Event</h3>
+        <form id="eventForm" class="upcoming-event">
+          <input type="text" id="eventName" placeholder="Event Name" required />
+          <input type="date" id="eventDate" required />
+          <!-- Upload Image -->
+          <label for="eventImageUpload" class="upload-label">Upload Event Image</label>
+          <input type="file" id="eventImageUpload" accept="image/*" />
+          <div id="imagePreview" class="image-preview">No image selected</div>
+          
+          <textarea id="eventDesc" placeholder="Event Description" required></textarea>
+          <button type="submit" class="btn">Add Event</button>
+        </form>
+        <div style="display:flex; gap:.6rem; padding:10px; justify-content:flex-end; flex-wrap: wrap;">
+          <button class="btn ghost" data-open-booking>Host Your Event</button>
+        </div>
     </section>
 
     <!-- Gallery -->
@@ -431,28 +446,28 @@
         <!-- Replaced with real images and data-full targets for the lightbox -->
         <div class="gallery" data-reveal>
           <div class="tile large" data-full="https://images.pexels.com/photos/19197213/pexels-photo-19197213.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=2000&amp;h=1333&amp;fit=crop">
-            <div style="background-image:url('https://images.pexels.com/photos/19197213/pexels-photo-19197213.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200&amp;h=800&amp;fit=crop')"></div>
+            <div style="background-image:url('https://images.pexels.com/photos/19197213/pexels-photo-19197213.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop')"></div>
           </div>
           <div class="tile wide" data-full="https://images.pexels.com/photos/30420205/pexels-photo-30420205.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=2000&amp;h=1333&amp;fit=crop">
-            <div style="background-image:url('https://images.pexels.com/photos/30420205/pexels-photo-30420205.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200&amp;h=800&amp;fit=crop')"></div>
+            <div style="background-image:url('https://images.pexels.com/photos/30420205/pexels-photo-30420205.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop')"></div>
           </div>
           <div class="tile tall" data-full="https://images.pexels.com/photos/33059761/pexels-photo-33059761.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600&amp;h=2000&amp;fit=crop">
-            <div style="background-image:url('https://images.pexels.com/photos/33059761/pexels-photo-33059761.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800&amp;h=1000&amp;fit=crop')"></div>
+            <div style="background-image:url('https://images.pexels.com/photos/33059761/pexels-photo-33059761.jpeg?auto=compress&cs=tinysrgb&w=800&h=1000&fit=crop')"></div>
           </div>
           <div class="tile" data-full="https://images.pexels.com/photos/8457816/pexels-photo-8457816.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1800&amp;h=1200&amp;fit=crop">
-            <div style="background-image:url('https://images.pexels.com/photos/8457816/pexels-photo-8457816.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900&amp;h=600&amp;fit=crop')"></div>
+            <div style="background-image:url('https://images.pexels.com/photos/8457816/pexels-photo-8457816.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&fit=crop')"></div>
           </div>
           <div class="tile wide" data-full="https://images.pexels.com/photos/6370107/pexels-photo-6370107.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=2000&amp;h=1333&amp;fit=crop">
-            <div style="background-image:url('https://images.pexels.com/photos/6370107/pexels-photo-6370107.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200&amp;h=800&amp;fit=crop')"></div>
+            <div style="background-image:url('https://images.pexels.com/photos/6370107/pexels-photo-6370107.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop')"></div>
           </div>
           <div class="tile" data-full="https://images.pexels.com/photos/16962424/pexels-photo-16962424.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1800&amp;h=1200&amp;fit=crop">
-            <div style="background-image:url('https://images.pexels.com/photos/16962424/pexels-photo-16962424.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900&amp;h=600&amp;fit=crop')"></div>
+            <div style="background-image:url('https://images.pexels.com/photos/16962424/pexels-photo-16962424.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&fit=crop')"></div>
           </div>
           <div class="tile wide" data-full="https://images.pexels.com/photos/8208755/pexels-photo-8208755.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=2000&amp;h=1333&amp;fit=crop">
-            <div style="background-image:url('https://images.pexels.com/photos/8208755/pexels-photo-8208755.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200&amp;h=800&amp;fit=crop')"></div>
+            <div style="background-image:url('https://images.pexels.com/photos/8208755/pexels-photo-8208755.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop')"></div>
           </div>
           <div class="tile" data-full="https://images.pexels.com/photos/14250751/pexels-photo-14250751.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1800&amp;h=1200&amp;fit=crop">
-            <div style="background-image:url('https://images.pexels.com/photos/14250751/pexels-photo-14250751.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900&amp;h=600&amp;fit=crop')"></div>
+            <div style="background-image:url('https://images.pexels.com/photos/14250751/pexels-photo-14250751.jpeg?auto=compress&cs=tinysrgb&w=900&h=600&fit=crop')"></div>
           </div>
         </div>
       </div>
